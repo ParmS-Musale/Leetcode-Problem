@@ -1,18 +1,38 @@
 class Solution {
     public String reverseWords(String s) {
-        StringBuilder sb = new StringBuilder();
+        char[] arr = s.toCharArray();
+        int left = 0;
+        int right = 0;
 
-        String [] words = s.split("\\s+");
-
-        for (String word : words){
-            StringBuilder temp = new StringBuilder( word );
-                temp.reverse();
-                sb.append(temp);
-                sb.append (" ");
+        while (right < arr.length) {
+            // Check for space character to identify word boundaries
+            if (arr[right] == ' ') {
+                // Reverse the word
+                reverse(arr, left, right - 1);
+                // Move left pointer to the start of the next word
+                left = right + 1;
+            }
+            right++;
         }
-        return sb.toString().trim ();
+
+        // Reverse the last word or the only word if there's only one in the sentence
+        reverse(arr, left, right - 1);
+
+        return new String(arr);
+    }
+
+    // Method to reverse a portion of a character array between indices left and right
+    private void reverse(char[] arr, int left, int right) {
+        while (left < right) {
+            char temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;
+        }
     }
 }
+
 
 // Example 1:
 
