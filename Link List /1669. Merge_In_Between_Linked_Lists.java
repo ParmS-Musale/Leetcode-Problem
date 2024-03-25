@@ -24,6 +24,9 @@ class Solution {
 // }
 
 
+    // Always belive in your self you are one who change your all next generation and still what are you doing im really proud of you
+    //stay stronger and live togrther be happpy
+
 // Example 1:
 
 
