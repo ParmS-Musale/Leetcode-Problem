@@ -8,7 +8,7 @@ class Solution {
         }
         return pair1[1];
     }
-}
+
 
 // Example 1:
 
